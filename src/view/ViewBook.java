@@ -1,25 +1,26 @@
 package view;
 
+import control.ControlBasic;
 import control.ControlGeneral;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 import model.Book;
+import model.Member;
 import model.Row;
 import useful.Several;
 
 public class ViewBook extends javax.swing.JFrame {
     
     private final String title;
-    private final ControlGeneral cB, cR;
+    private final ControlBasic cB, cM, cR;
 
     public ViewBook() {
         initComponents();
         title = "System lib - Books";
         cB = new ControlGeneral(1);
+        cM = new ControlGeneral(2);
         cR = new ControlGeneral(3);
     }
 
@@ -150,6 +151,7 @@ public class ViewBook extends javax.swing.JFrame {
         TxtTitle.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         PnlButtons.setBackground(new java.awt.Color(124, 222, 220));
+        PnlButtons.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         BtnCreate.setBackground(new java.awt.Color(255, 255, 255));
         BtnCreate.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
@@ -479,7 +481,9 @@ public class ViewBook extends javax.swing.JFrame {
         Row r = (Row) o;
         if ( r != null) {
             String row[] = r.getRow().split(",");
-            TxtRow.setText(row[0]);
+            Object member = cM.getRead("", Integer.parseInt(row[0]));
+            Member m = (Member) member;
+            TxtRow.setText(m.getName());
         }
         else 
             TxtRow.setText("Não há uma fila para este titulo o_O");

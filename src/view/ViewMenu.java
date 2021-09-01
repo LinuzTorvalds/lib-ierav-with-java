@@ -32,6 +32,8 @@ public class ViewMenu extends javax.swing.JFrame {
         MnbMenu = new javax.swing.JMenuBar();
         MnFile = new javax.swing.JMenu();
         MniBook = new javax.swing.JMenuItem();
+        MniMember = new javax.swing.JMenuItem();
+        MniRow = new javax.swing.JMenuItem();
         MniExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +82,26 @@ public class ViewMenu extends javax.swing.JFrame {
         });
         MnFile.add(MniBook);
 
+        MniMember.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        MniMember.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        MniMember.setText("Membros");
+        MniMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MniMemberActionPerformed(evt);
+            }
+        });
+        MnFile.add(MniMember);
+
+        MniRow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        MniRow.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        MniRow.setText("Fila");
+        MniRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MniRowActionPerformed(evt);
+            }
+        });
+        MnFile.add(MniRow);
+
         MniExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
         MniExit.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         MniExit.setText("Sair");
@@ -106,7 +128,7 @@ public class ViewMenu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addComponent(TlbDev, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -128,6 +150,18 @@ public class ViewMenu extends javax.swing.JFrame {
         frame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MniBookActionPerformed
+
+    private void MniMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniMemberActionPerformed
+        ViewMember frame = new ViewMember();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MniMemberActionPerformed
+
+    private void MniRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniRowActionPerformed
+        ViewRow frame = new ViewRow();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MniRowActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -154,6 +188,8 @@ public class ViewMenu extends javax.swing.JFrame {
     private javax.swing.JMenuBar MnbMenu;
     private javax.swing.JMenuItem MniBook;
     private javax.swing.JMenuItem MniExit;
+    private javax.swing.JMenuItem MniMember;
+    private javax.swing.JMenuItem MniRow;
     private javax.swing.JToolBar TlbDev;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
