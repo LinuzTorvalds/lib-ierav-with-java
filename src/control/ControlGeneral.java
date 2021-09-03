@@ -2,7 +2,7 @@ package control;
 
 import dao.DaoBasic;
 import dao.DaoBook;
-import dao.DaoIoan;
+import dao.DaoLoan;
 import dao.DaoMember;
 import dao.DaoRow;
 import java.util.List;
@@ -19,7 +19,7 @@ public class ControlGeneral implements ControlBasic {
                 break;
             case 3 : this.dG = new DaoRow();
                 break;
-            case 4 : this.dG = new DaoIoan();
+            case 4 : this.dG = new DaoLoan();
         }
     }       
     

@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 import org.joda.time.Period;
 
-public class Ioan {
+public class Loan {
     
     private int code;
     private Book book;

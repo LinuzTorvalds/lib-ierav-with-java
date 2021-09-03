@@ -34,6 +34,7 @@ public class ViewMenu extends javax.swing.JFrame {
         MniBook = new javax.swing.JMenuItem();
         MniMember = new javax.swing.JMenuItem();
         MniRow = new javax.swing.JMenuItem();
+        MniIoan = new javax.swing.JMenuItem();
         MniExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +103,16 @@ public class ViewMenu extends javax.swing.JFrame {
         });
         MnFile.add(MniRow);
 
+        MniIoan.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        MniIoan.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
+        MniIoan.setText("Empréstimos");
+        MniIoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MniIoanActionPerformed(evt);
+            }
+        });
+        MnFile.add(MniIoan);
+
         MniExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
         MniExit.setFont(new java.awt.Font("JetBrains Mono", 0, 12)); // NOI18N
         MniExit.setText("Sair");
@@ -163,6 +174,12 @@ public class ViewMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_MniRowActionPerformed
 
+    private void MniIoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniIoanActionPerformed
+        ViewLoan frame = new ViewLoan();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_MniIoanActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -188,6 +205,7 @@ public class ViewMenu extends javax.swing.JFrame {
     private javax.swing.JMenuBar MnbMenu;
     private javax.swing.JMenuItem MniBook;
     private javax.swing.JMenuItem MniExit;
+    private javax.swing.JMenuItem MniIoan;
     private javax.swing.JMenuItem MniMember;
     private javax.swing.JMenuItem MniRow;
     private javax.swing.JToolBar TlbDev;
